@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CadastroRoutingModule } from './cadastro-routing.module';
+import { SobreRoutingModule } from './sobre-routing.module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    CadastroRoutingModule
+    SobreRoutingModule
   ]
 })
-export class CadastroModule { }
+export class SobreModule { }
