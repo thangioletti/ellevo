@@ -1,0 +1,28 @@
+body {
+  margin: 0 !important;
+}
+
+mat-toolbar.mat-toolbar.mat-toolbar-single-row {
+    background: #00bcb6;
+
+    img.logo__image.logo__image--mobile {
+      margin-right: 25px;
+    }
+
+    button.mat-button {
+    background: transparent;
+    color: #fff;
+    margin: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+}
+
+.m-lr-5 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.m-lr-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
