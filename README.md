@@ -1,27 +1,43 @@
-# Ellevo
+# Teste Dev Ellevo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+## Aplicação
 
-## Development server
+Criar um webapp de agenda de contatos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+### Autenticação com usuário e senha
+
+- Não deve ser possível ter acesso a nenhuma outra funcionalidade do webapp caso esteja deslogado
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Listar todos os contatos
 
-## Build
+- Lista simples com nome do contato que, quando clicado, abre uma página para visualização de contatos
+- Os contatos deverão ser ordenados por ordem alfabética
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Visualizar um contato específico
 
-## Running unit tests
+- Exibir campos: nome, telefone e e-mail
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Cadastrar contatos
 
-## Running end-to-end tests
+- Formulário com campos de nome, telefone e e-mail
+- Não é necessário conectividade com banco de dados. Os contatos deverão ser salvos em IndexedDB
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Editar contatos
 
-## Further help
+- Deve ser possível editar qualquer um dos campos existentes no cadastro de contatos
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Excluir contatos
+
+- Permitir excluir os usuários
+
+## Premissas
+
+- Utilizar ASP Net Core 2.2
+- Implementar uma API REST
+- Utilizar Angular 6 ou 7
+- Utilizar biblioteca Angular Material para estilos e componentes base. Link: https://material.angular.io/
+- O webapp deve ser composto por, no mínimo, 3 rotas
+- Todas as rotas devem ser lazy loaded
+- O webapp deve ser responsivo utilizar o máximo de recursos disponíveis do framework (pipes, diretivas, componentes, serviços)
