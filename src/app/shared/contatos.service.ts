@@ -66,7 +66,7 @@ export class ContatosService {
   }
 
   select() {
-    return this.db.selectContato();
+    return this.db.selectContato(null);
   }
 
   delete(i) {

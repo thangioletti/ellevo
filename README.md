@@ -9,7 +9,7 @@ Criar um webapp de agenda de contatos.
 - Angular 7
 - Angular Material: https://material.angular.io/
 - Rotas lazy loaded
-- Sweetalert: https://sweetalert.js.org/guides/
+- Sweetalert2: https://sweetalert2.github.io/
 - Local Storage para manter os dados
 
 ## Login

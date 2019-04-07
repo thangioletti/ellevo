@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContatosService } from 'src/app/shared/contatos.service';
 import { Router } from '@angular/router'
-import swal  from 'sweetalert';
-
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-contatos-list',
@@ -33,11 +32,18 @@ export class ContatosListComponent implements OnInit {
   }
 
   delalhe(nome, telefone, email) {
-    swal(`
-      Nome: ${nome}
-      Telefone: ${telefone}
-      E-mail: ${email}
-    `);
+    Swal.fire({
+      title: '<strong>Detalhe</strong>',
+      type: 'info',
+      html:
+        '<b>Nome</b>: '+nome+
+        '<br><b>Telefone</b>: '+telefone+
+        '<br><b>E-mail</b>: '+email,
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Fechar',    
+    })
   }
 
   edit(i) {
@@ -46,17 +52,28 @@ export class ContatosListComponent implements OnInit {
   }
 
   delete(i) {
-  
-    swal({
-      title: "Você tem certeza?",
-      icon: "warning"
+    
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false,
     })
-    .then((willDelete) => {
-      if (willDelete) {
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Você tem certeza?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
         this.service.delete(i);
         this.ngOnInit();
-      } 
-    });
+      }
+    });   
   }
 
    //Método que controla mensagens.
@@ -64,7 +81,10 @@ export class ContatosListComponent implements OnInit {
     let msg = localStorage.getItem('msg');
     if (msg) {
       setTimeout(function () {
-        swal(msg, '', 'success');
+        Swal.fire({
+          type: 'success',
+          title: msg,
+        });
       }, 100);
       localStorage.removeItem('msg');
     }

@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router'
 import {DbService} from './db.service'
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +38,11 @@ export class LoginService {
         }        
       }
 
-      swal('Login ou senha invalidos!', '', 'error');
+      Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Login ou senha invalidos!',
+      })
       
     }
   }
