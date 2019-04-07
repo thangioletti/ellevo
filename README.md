@@ -23,6 +23,7 @@ Abrir o terminal
 ```
 git clone https://github.com/thangioletti/ellevo.git
 cd ellevo
+npm install
 ng serve
 ```
 
