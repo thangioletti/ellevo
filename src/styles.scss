@@ -29,4 +29,30 @@ $ellevo-theme: mat-light-theme($ellevo-primary, $ellevo-accent, $ellevo-warn);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #EAF2F2; }
+
+
+.m-lr-5 {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+.m-lr-10 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+button.mat-raised-button.mat-primary {
+    background-color: #4CAF50;
+}
+
+.card-default {
+    margin: 20px;
+}
+
+mat-form-field {
+    width: 100% !important;
+}
+
+.mat-card-actions {
+    padding: 8px 10px !important;
+}

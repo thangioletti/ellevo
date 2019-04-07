@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {NgxMaskModule} from 'ngx-mask'
 import * as Material from "@angular/material";
 
 @NgModule({
@@ -16,6 +17,10 @@ import * as Material from "@angular/material";
     Material.MatNativeDateModule,
     Material.MatButtonModule,
     Material.MatCardModule,
+    Material.MatTableModule,
+    Material.MatSortModule,
+    Material.MatBottomSheetModule,
+    Material.MatMenuModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -29,6 +34,10 @@ import * as Material from "@angular/material";
     Material.MatNativeDateModule,
     Material.MatButtonModule,
     Material.MatCardModule,
+    Material.MatTableModule,
+    Material.MatSortModule,
+    Material.MatBottomSheetModule,
+    Material.MatMenuModule
   ],
   declarations: []
 })

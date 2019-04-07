@@ -1,0 +1,27 @@
+<div id="fundo">
+  <div id="sombra"></div>
+  <mat-card>
+    <mat-card-header>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="service.form">
+    
+        <mat-form-field>
+          <input matInput type="text" placeholder="Login*" formControlName="login">
+          <mat-error *ngIf="service.form.controls['login'].errors?.required">Login obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" placeholder="Senha*" formControlName="senha">
+          <mat-error *ngIf="service.form.controls['senha'].errors?.required">Senha obrigatório</mat-error>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid" (click)="service.login($event)">Entrar</button>
+        
+        <p>
+          Para primeiro login utilize <br> Login: <b>root</b> e Senha: <b>root</b>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

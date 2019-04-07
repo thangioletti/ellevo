@@ -6,18 +6,27 @@ import { AppComponent } from './app.component';
 
 import { MaterialModule } from "./material/material.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './shared/login.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
+    LoginComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [LoginService]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

@@ -1,30 +1,50 @@
-<div class="container">
-    <mat-card class="card-default">
-      <mat-card-title>Cadastro de contatos</mat-card-title>
-      <mat-card-actions>
-        Ações:
-        <button mat-button routerLink="/contatos">Voltar a lista</button>
-      </mat-card-actions>
-      <mat-card-content>
-  
-        <mat-form-field>
-          <input matInput type="text" placeholder="Nome">
-        </mat-form-field>
-        
-        <br>  
-        
-        <mat-form-field>
-          <input matInput placeholder="Telefone">
-        </mat-form-field>
-        
-        <br>
+<mat-card class="card-default">
+  <mat-card-title>Cadastro de contatos</mat-card-title>
+  <mat-card-actions class="m-lr-10">
+    Ações:
+    <button mat-button routerLink="/contatos">Voltar a lista</button>
+  </mat-card-actions>
+  <mat-card-content>
 
-        <mat-form-field>
-          <input matInput type="text" placeholder="E-mail">
-        </mat-form-field>
-        
-        <button mat-raised-button color="primary">Salvar</button>
+    <form [formGroup]="service.form">
 
-      </mat-card-content>
-    </mat-card>
-  </div>
+      <h3> Informações</h3>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Nome*" formControlName="nome">
+        <mat-error *ngIf="service.form.controls['nome'].errors?.required">Nome obrigatório</mat-error>
+      </mat-form-field>
+      
+      <br>  
+      
+      <mat-form-field>
+        <input matInput placeholder="Telefone*"  formControlName="telefone" mask='(00) 00000-0000)'>
+        <mat-error *ngIf="service.form.controls['telefone'].errors?.required">Telefone obrigatório</mat-error>
+      </mat-form-field>
+      
+      <br>
+
+      <mat-form-field>
+        <input matInput type="text" placeholder="E-mail*"  formControlName="email">
+        <mat-error *ngIf="service.form.controls['email'].errors?.required">E-mail obrigatório</mat-error>
+      </mat-form-field>
+      
+      <br>
+
+      <h3> Liberar acesso ao sistema </h3>
+
+      <mat-form-field>
+        <input matInput placeholder="Login" formControlName="login">
+      </mat-form-field>
+      
+      <br>
+
+      <mat-form-field>
+        <input matInput type="text" placeholder="Senha"  formControlName="senha">
+       </mat-form-field>
+
+      <br>
+      <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid" (click)="service.save($event)">Salvar</button>
+      <button mat-raised-button class="m-lr-10" color="warn" (click)="cancel()">Cancelar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
