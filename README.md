@@ -20,8 +20,10 @@ Para fazer o login inincial utilizar login: root, senha: root;
 
 Abrir o terminal
 
+```
 git clone https://github.com/thangioletti/ellevo.git
 cd ellevo
 ng serve
+```
 
 Acessar localhost: http://localhost:4200
